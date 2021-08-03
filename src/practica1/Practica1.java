@@ -5,6 +5,8 @@
  */
 package practica1;
 
+import practica1.interfaz.Interfaz;
+
 /**
  *
  * @author GORDILLO G
@@ -15,6 +17,8 @@ public class Practica1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Interfaz inicio = new Interfaz();
+        
         
     }
     
