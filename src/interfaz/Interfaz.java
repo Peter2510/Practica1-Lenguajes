@@ -6,6 +6,7 @@
 package interfaz;
 
 import enums.TipoToken;
+import leer.LeerCadena;
 
 /**
  *
@@ -21,29 +22,8 @@ public class Interfaz extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
-    
-    private void SimbolosOperacion(){
-        String cadena = textoIngresado.getText();
-        String simbolo;
-        String cadenaSimbolos = "";
 
-        for (int i = 0; i < cadena.length(); i++) {
-
-            String caracter = String.valueOf(cadena.charAt(i));
-
-            if (caracter.equals("*") || caracter.equals("/") || caracter.equals("+") || caracter.equals("-")||caracter.equals("(") || caracter.equals(")") || caracter.equals("{") || caracter.equals("}")||caracter.equals("[")||caracter.equals("]")) {
-
-                System.out.println(TipoToken.SIMBOLO.toString());
-                System.out.println(cadena.charAt(i));
-                cadenaSimbolos = cadenaSimbolos + cadena.charAt(i);
-                System.out.println(cadenaSimbolos);
-                salida.setText(TipoToken.SIMBOLO.getTipo()+" "+ cadenaSimbolos);
-            }
-
-        }   
-    }
-    
-    
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -150,8 +130,8 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_limpiarActionPerformed
 
     private void validarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validarActionPerformed
-     
-     SimbolosOperacion();
+
+        LeerCadena.leer();
     }//GEN-LAST:event_validarActionPerformed
 
 
@@ -161,8 +141,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton limpiar;
-    private javax.swing.JTextArea salida;
-    private javax.swing.JTextArea textoIngresado;
+    public static javax.swing.JTextArea salida;
+    public static javax.swing.JTextArea textoIngresado;
     private javax.swing.JButton validar;
     // End of variables declaration//GEN-END:variables
 }
