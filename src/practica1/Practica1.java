@@ -5,7 +5,7 @@
  */
 package practica1;
 
-import practica1.interfaz.Interfaz;
+import interfaz.Interfaz;
 
 /**
  *

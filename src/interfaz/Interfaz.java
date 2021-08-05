@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practica1.interfaz;
+package interfaz;
+
+import enums.TipoToken;
 
 /**
  *
@@ -47,6 +49,11 @@ public class Interfaz extends javax.swing.JFrame {
         jScrollPane1.setViewportView(textoIngresado);
 
         validar.setText("Validar");
+        validar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validarActionPerformed(evt);
+            }
+        });
 
         limpiar.setText("Limpiar");
         limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -115,11 +122,26 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
-           textoIngresado.setText("");
-           salida.setText("");
+        textoIngresado.setText("");
+        salida.setText("");
     }//GEN-LAST:event_limpiarActionPerformed
 
- 
+    private void validarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validarActionPerformed
+        String cadena = textoIngresado.getText();
+
+        for (int i = 0; i < cadena.length(); i++) {
+
+            String caracter = String.valueOf(cadena.charAt(i));
+
+            if (caracter.equals("*") || caracter.equals("/") || caracter.equals("+") || caracter.equals("-")) {
+
+                System.out.println(TipoToken.SIMBOLO.toString());
+                System.out.println(cadena.charAt(i));
+            }
+
+        }
+    }//GEN-LAST:event_validarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
