@@ -6,7 +6,7 @@
 package interfaz;
 
 import enums.TipoToken;
-import leer.LeerCadena;
+import leer.*;
 
 /**
  *
@@ -131,7 +131,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void validarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validarActionPerformed
 
-        LeerCadena.leer();
+     DividirCadena.leerCadena();
     }//GEN-LAST:event_validarActionPerformed
 
 
