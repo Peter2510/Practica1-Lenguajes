@@ -21,6 +21,29 @@ public class Interfaz extends javax.swing.JFrame {
         this.setVisible(true);
         this.setLocationRelativeTo(null);
     }
+    
+    private void SimbolosOperacion(){
+        String cadena = textoIngresado.getText();
+        String simbolo;
+        String cadenaSimbolos = "";
+
+        for (int i = 0; i < cadena.length(); i++) {
+
+            String caracter = String.valueOf(cadena.charAt(i));
+
+            if (caracter.equals("*") || caracter.equals("/") || caracter.equals("+") || caracter.equals("-")||caracter.equals("(") || caracter.equals(")") || caracter.equals("{") || caracter.equals("}")||caracter.equals("[")||caracter.equals("]")) {
+
+                System.out.println(TipoToken.SIMBOLO.toString());
+                System.out.println(cadena.charAt(i));
+                cadenaSimbolos = cadenaSimbolos + cadena.charAt(i);
+                System.out.println(cadenaSimbolos);
+                salida.setText(TipoToken.SIMBOLO.getTipo()+" "+ cadenaSimbolos);
+            }
+
+        }   
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -127,19 +150,8 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_limpiarActionPerformed
 
     private void validarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validarActionPerformed
-        String cadena = textoIngresado.getText();
-
-        for (int i = 0; i < cadena.length(); i++) {
-
-            String caracter = String.valueOf(cadena.charAt(i));
-
-            if (caracter.equals("*") || caracter.equals("/") || caracter.equals("+") || caracter.equals("-")) {
-
-                System.out.println(TipoToken.SIMBOLO.toString());
-                System.out.println(cadena.charAt(i));
-            }
-
-        }
+     
+     SimbolosOperacion();
     }//GEN-LAST:event_validarActionPerformed
 
 

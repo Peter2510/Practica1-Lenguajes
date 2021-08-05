@@ -11,10 +11,10 @@ package enums;
  */
 public enum TipoToken {
 
-    NUMEROENTERO("Es entero"),
-    NUMERODECIMAL("Es un decimal"),
-    ID("Es un id"),
-    SIMBOLO("Es un simbolo");
+    NUMEROENTERO("Enteros: "),
+    NUMERODECIMAL("Decimales: "),
+    ID("Id: "),
+    SIMBOLO("Simbolos: ");
 
     private String tipo;
 
@@ -24,8 +24,14 @@ public enum TipoToken {
 
     @Override
     public String toString() {
-        return "El token leido es de tipo " + this.name().toLowerCase();
+        return "El token leido es un "+ tipo;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+    
+    
 
     
 }
