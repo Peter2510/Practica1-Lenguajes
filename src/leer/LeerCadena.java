@@ -7,14 +7,13 @@ package leer;
 
 import enums.TipoToken;
 import interfaz.Interfaz;
-
 /**
  *
  * @author GORDILLO G
  */
 public class LeerCadena {
-
-    public static void leer() {
+    
+      public static void leer() {
         String cadena = Interfaz.textoIngresado.getText();
         String simbolo;
         String cadenaSimbolos = "";
@@ -23,7 +22,8 @@ public class LeerCadena {
 
             String caracter = String.valueOf(cadena.charAt(i));
 
-            if (caracter.equals("{") || caracter.equals("}")||caracter.equals("[")||caracter.equals("]")||caracter.equals(",")||caracter.equals(";")) {
+            if (caracter.equals("*") || caracter.equals("/") || caracter.equals("+") || caracter.equals("-") || caracter.equals("(") || caracter.equals(")") || caracter.equals("{") || caracter.equals("}")
+                   || caracter.equals("[") || caracter.equals("]")) {
 
                 System.out.println(TipoToken.SIMBOLO.toString());
                 System.out.println(cadena.charAt(i));

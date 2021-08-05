@@ -13,6 +13,7 @@ public enum TipoToken {
 
     NUMEROENTERO("Enteros: "),
     NUMERODECIMAL("Decimales: "),
+    CARACTER("Caracteres: "),
     ID("Id: "),
     SIMBOLO("Simbolos: ");
 
