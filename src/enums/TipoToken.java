@@ -24,14 +24,11 @@ public enum TipoToken {
 
     @Override
     public String toString() {
-        return "El token leido es un "+ tipo;
+        return "El token leido es un " + tipo;
     }
 
     public String getTipo() {
         return tipo;
     }
-    
-    
 
-    
 }
