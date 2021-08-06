@@ -46,7 +46,7 @@ public class DividirCadena {
     public static void Clasificar(String dato) {
 
         for (int i = 0; i < dato.length(); i++) {
-            
+
             char idL = dato.charAt(i);
 
             String caracter = String.valueOf(dato.charAt(i));
@@ -77,26 +77,17 @@ public class DividirCadena {
                 System.out.println(cadenaEnteros);
 
             }*/
-            if (validarNumero(dato)==true) {
+            if (caracter.equals("1") || caracter.equals("2") || caracter.equals("3") || caracter.equals("4") || caracter.equals("5") || caracter.equals("6") || caracter.equals("7") || caracter.equals("8")
+                    || caracter.equals("9") || caracter.equals("0")) {
 
                 System.out.println(TipoToken.NUMEROENTERO.toString());
                 System.out.println(dato.charAt(i));
+
                 cadenaEnteros = cadenaEnteros + dato.charAt(i);
                 cadenaFEnteros = cadenaEnteros;
                 System.out.println(cadenaEnteros);
 
-            } 
-            
-            if (validarNumero(dato)==false) {
-
-                cadenaId = cadenaId + dato.charAt(i);
-                cadenaFId = cadenaId;
-                System.out.println(cadenaId);
-
-            }
-
-            
-        else {
+            } else {
                 cadenaError = cadenaError + dato.charAt(i);
                 cadenaFError = cadenaError;
             }
@@ -114,7 +105,7 @@ public class DividirCadena {
         }
         try {
             Double.parseDouble(dato);
-            
+
             return true;
         } catch (NumberFormatException ex) {
             return false;
