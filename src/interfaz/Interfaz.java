@@ -131,7 +131,8 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void validarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validarActionPerformed
 
-     DividirCadena.leerCadena();
+    DividirCadena.leerCadena();
+    //LeerCadena.leer();
     }//GEN-LAST:event_validarActionPerformed
 
 
