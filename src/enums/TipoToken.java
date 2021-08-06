@@ -15,7 +15,8 @@ public enum TipoToken {
     NUMERODECIMAL("Decimales: "),
     CARACTER("Caracteres: "),
     ID("Id: "),
-    SIMBOLO("Simbolos: ");
+    SIMBOLO("Simbolos: "),
+    ERROR("Error: ");
 
     private String tipo;
 

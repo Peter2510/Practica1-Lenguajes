@@ -19,12 +19,14 @@ public class DividirCadena {
     private static String cadenaId = "";
     private static String cadenaEnteros = "";
     private static String cadenaDecimales = "";
+    private static String cadenaError="";
 
     private static String cadenaFSimbolos = "";
     private static String cadenaFCaracteres = "";
     private static String cadenaFId = "";
     private static String cadenaFEnteros = "";
     private static String cadenaFDecimales = "";
+    private static String cadenaFError="";
 
     public static void leerCadena() {
 
@@ -83,10 +85,14 @@ public class DividirCadena {
                 System.out.println(cadenaEnteros);
 
             }
+            else{
+                cadenaError = cadenaError + dato.charAt(i);
+                cadenaFError=cadenaError;
+            }
 
         }
 
-        Interfaz.salida.setText(TipoToken.CARACTER.getTipo() + " " + cadenaFCaracteres + "\n" + TipoToken.SIMBOLO.getTipo() + " " + cadenaFSimbolos + "\n" + TipoToken.NUMEROENTERO.getTipo() + cadenaFEnteros + "\n" + TipoToken.ID.toString() + cadenaFId);
+        Interfaz.salida.setText(TipoToken.CARACTER.getTipo() + " " + cadenaFCaracteres + "\n" + TipoToken.SIMBOLO.getTipo() + " " + cadenaFSimbolos + "\n" + TipoToken.NUMEROENTERO.getTipo() + cadenaFEnteros + "\n" + TipoToken.ID.getTipo()+ cadenaFId + "\n" + TipoToken.ERROR.getTipo());
 
     }
 
