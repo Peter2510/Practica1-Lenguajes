@@ -79,7 +79,7 @@ public class DividirCadena {
                 System.out.println(TipoToken.NUMEROENTERO.toString());
                 System.out.println(dato.charAt(i));
                 cadenaEnteros = cadenaEnteros + dato.charAt(i);
-                cadenaFEnteros = cadenaFEnteros + cadenaEnteros;
+                cadenaFEnteros =  cadenaEnteros;
                 System.out.println(cadenaEnteros);
 
             }
