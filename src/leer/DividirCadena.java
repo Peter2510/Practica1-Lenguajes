@@ -19,14 +19,14 @@ public class DividirCadena {
     private static String cadenaId = "";
     private static String cadenaEnteros = "";
     private static String cadenaDecimales = "";
-    private static String cadenaError="";
+    private static String cadenaError = "";
 
     private static String cadenaFSimbolos = "";
     private static String cadenaFCaracteres = "";
     private static String cadenaFId = "";
     private static String cadenaFEnteros = "";
     private static String cadenaFDecimales = "";
-    private static String cadenaFError="";
+    private static String cadenaFError = "";
 
     public static void leerCadena() {
 
@@ -46,6 +46,8 @@ public class DividirCadena {
     public static void Clasificar(String dato) {
 
         for (int i = 0; i < dato.length(); i++) {
+            
+            char idL = dato.charAt(i);
 
             String caracter = String.valueOf(dato.charAt(i));
 
@@ -53,7 +55,7 @@ public class DividirCadena {
 
                 cadenaSimbolos = cadenaSimbolos + dato.charAt(i);
                 cadenaFSimbolos = cadenaSimbolos;
-                System.out.println("Final simbolos "+cadenaFSimbolos);
+                System.out.println("Final simbolos " + cadenaFSimbolos);
 
             }
 
@@ -75,24 +77,33 @@ public class DividirCadena {
                 System.out.println(cadenaEnteros);
 
             }*/
-            if (caracter.equals("1") || caracter.equals("2") || caracter.equals("3") || caracter.equals("4") || caracter.equals("5") || caracter.equals("6") || caracter.equals("7") || caracter.equals("8")
-                    || caracter.equals("9") || caracter.equals("0")) {
+            if (validarNumero(dato)==true) {
 
                 System.out.println(TipoToken.NUMEROENTERO.toString());
                 System.out.println(dato.charAt(i));
                 cadenaEnteros = cadenaEnteros + dato.charAt(i);
-                cadenaFEnteros =  cadenaEnteros;
+                cadenaFEnteros = cadenaEnteros;
                 System.out.println(cadenaEnteros);
 
+            } 
+            
+            if (validarNumero(dato)==false) {
+
+                cadenaId = cadenaId + dato.charAt(i);
+                cadenaFId = cadenaId;
+                System.out.println(cadenaId);
+
             }
-            else{
+
+            
+        else {
                 cadenaError = cadenaError + dato.charAt(i);
-                cadenaFError=cadenaError;
+                cadenaFError = cadenaError;
             }
 
         }
 
-        Interfaz.salida.setText(TipoToken.CARACTER.getTipo() + " " + cadenaFCaracteres + "\n" + TipoToken.SIMBOLO.getTipo() + " " + cadenaFSimbolos + "\n" + TipoToken.NUMEROENTERO.getTipo() + cadenaFEnteros + "\n" + TipoToken.ID.getTipo()+ cadenaFId + "\n" + TipoToken.ERROR.getTipo());
+        Interfaz.salida.setText(TipoToken.CARACTER.getTipo() + " " + cadenaFCaracteres + "\n" + TipoToken.SIMBOLO.getTipo() + " " + cadenaFSimbolos + "\n" + TipoToken.NUMEROENTERO.getTipo() + cadenaFEnteros + "\n" + TipoToken.ID.getTipo() + cadenaFId + "\n" + TipoToken.ERROR.getTipo());
 
     }
 
@@ -103,6 +114,7 @@ public class DividirCadena {
         }
         try {
             Double.parseDouble(dato);
+            
             return true;
         } catch (NumberFormatException ex) {
             return false;
